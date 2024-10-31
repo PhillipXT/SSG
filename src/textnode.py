@@ -3,7 +3,7 @@ from enum import Enum
 from src.leafnode import LeafNode
 
 class TextType(Enum):
-	NORMAL = "normal"
+	TEXT = "text"
 	BOLD = "bold"
 	ITALIC = "italic"
 	CODE = "code"
@@ -18,7 +18,7 @@ class TextNode:
 		self.url = url
 
 	def convert_to_html_node(self):
-		if self.text_type == TextType.NORMAL:
+		if self.text_type == TextType.TEXT:
 			return LeafNode(None, self.text)
 		elif self.text_type == TextType.BOLD:
 			return LeafNode("b", self.text)

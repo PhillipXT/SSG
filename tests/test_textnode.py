@@ -29,7 +29,7 @@ class TestTextNode(unittest.TestCase):
 		self.assertNotEqual(node1, node2)
 
 	def test_convert_to_html_node(self):
-		node = TextNode("Plain raw text here!", TextType.NORMAL)
+		node = TextNode("Plain raw text here!", TextType.TEXT)
 		self.assertEqual(node.convert_to_html_node().to_html(), "Plain raw text here!")
 
 	def test_convert_to_html_node(self):
