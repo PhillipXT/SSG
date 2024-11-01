@@ -49,7 +49,7 @@ def markdown_to_html_node(markdown):
 			lines = list(map(lambda n: n.lstrip(">").strip(), block.split("\n")))
 			text = " ".join(lines)
 			kids = list(map(lambda b: b.convert_to_html_node(), text_to_textnodes(text)))
-			children.append(LeafNode("blockquote", kids))
+			children.append(ParentNode("blockquote", kids))
 		elif block_type == block_type_ordered_list:
 			lines = list(map(lambda n: n[3:], block.split("\n")))
 			new_items = []
