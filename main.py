@@ -3,7 +3,7 @@ from src.htmlnode import HTMLNode
 from src.leafnode import LeafNode
 from src.parentnode import ParentNode
 
-from src.markdown import extract_markdown_images, extract_markdown_links
+from src.markdown_text import extract_markdown_images, extract_markdown_links
 
 def main():
 	my_class = TextNode("hello world", TextType.IMAGE, "http://hello.com")

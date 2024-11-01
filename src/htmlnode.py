@@ -35,7 +35,7 @@ class HTMLNode:
 		return result
 
 	def children_to_string(self):
-		return "" if not self.children else reduce(lambda x, y: x + "/" + y, self.children)
+		return "" if not self.children else self.children
 
 	def __repr__(self):
-		return f"<{self.tag}{self.props_to_html()}>{self.value if self.value else self.children_to_string()}</{self.tag}>"
+		return f"HTMLNode(tag: {self.tag}, value: {self.value}, children: {self.children}, properties: {self.props})"

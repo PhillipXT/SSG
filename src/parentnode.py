@@ -12,9 +12,9 @@ class ParentNode(HTMLNode):
 		super().__init__(tag, None, children, props)
 
 	def to_html(self):
-		if not self.tag:
+		if self.tag is None:
 			raise ValueError("Parent node must have a tag")
-		if not self.children:
+		if self.children is None:
 			raise ValueError("Parent node must have children")
 
 		inner_html = "".join(map(lambda child: child.to_html(), self.children))

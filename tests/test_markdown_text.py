@@ -1,7 +1,8 @@
 import unittest
 
 from src.textnode import TextNode, TextType
-from src.markdown import (
+
+from src.markdown_text import (
 	text_to_textnodes,
 	split_nodes_delimiter,
 	split_nodes_images,
@@ -10,7 +11,7 @@ from src.markdown import (
 	extract_markdown_links
 )
 
-class TestTextNode(unittest.TestCase):
+class TestMarkdownText(unittest.TestCase):
 	def test_eq_plain_text(self):
 		node = TextNode("This is a text node", TextType.TEXT)
 		new_nodes = split_nodes_delimiter([node], "**", TextType.BOLD)
@@ -107,7 +108,6 @@ class TestTextNode(unittest.TestCase):
 			TextNode(" and a ", TextType.TEXT),
 			TextNode("link", TextType.LINK, "https://boot.dev"),
 		])
-
 
 if __name__ == "__main__":
 	unittest.main()
