@@ -5,7 +5,7 @@ from src.htmlnode import HTMLNode
 from src.leafnode import LeafNode
 from src.parentnode import ParentNode
 from src.utilities import copy_folder
-from src.html_writer import generate_page
+from src.html_writer import generate_pages_recursive
 
 from src.markdown_text import extract_markdown_images, extract_markdown_links
 
@@ -25,6 +25,6 @@ def main():
 	copy_folder(dir_path_static, dir_path_public)
 
 	print(f"Generating pages:")
-	generate_page(os.path.join(dir_path_content, 'index.md'), 'template.html', os.path.join(dir_path_public, 'index.html'))
+	generate_pages_recursive(dir_path_content, 'template.html', dir_path_public)
 
 main()
